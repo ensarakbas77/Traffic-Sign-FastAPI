@@ -1,4 +1,4 @@
-# Trafik İşareti Sınıflandırıcı - FastAPI </br> </br>
+# 🚦Trafik İşareti Sınıflandırıcı - FastAPI </br> </br>
 ## 🔧 Kurulum ve Çalıştırma </br>
 ### 1. Repoyu klonlayın:
 
