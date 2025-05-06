@@ -7,9 +7,9 @@
 `cd Traffic-Sign-FastAPI` 
 
 
-### 2. Uygulamayı Başlatın: </br>
+### 2. Uygulamayı Docker ile Başlatın </br>
 `docker-compose up --build`
 
-### Tarayıcıdan Şuraya Gidin: </br>
+### 3. Tarayıcıdan FastAPI Arayüzüne Erişin </br>
 `http://localhost:7001/docs
 `
