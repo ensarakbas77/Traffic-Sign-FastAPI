@@ -4,16 +4,13 @@ import numpy as np
 import io
 import logging
 
-# Loglama ayarları
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Modeli yükle (globalde bir kez yüklensin)
 try:
     model = load_model("app/model/traffic.keras")
     logger.info("Model başarıyla yüklendi")
 
-    # İlk katman ağırlıklarını kontrol et
     first_layer_weights = model.layers[0].get_weights()
     logger.info(f"İlk katman ağırlık özeti: {np.mean(first_layer_weights[0])}, {np.std(first_layer_weights[0])}")
 except Exception as e:
@@ -68,38 +65,31 @@ class_labels = [
 
 def preprocess_image(image):
     """Görüntüyü model için ön işleme"""
-    # Model giriş boyutunu al
-    input_shape = model.input_shape[1:3]  # (height, width)
+
+    input_shape = model.input_shape[1:3]  
     logger.info(f"Model giriş boyutu: {input_shape}")
     
-    # Görüntüyü doğru boyuta getir
     image = image.resize(input_shape)
     
-    # RGB'ye dönüştür (eğer değilse)
     if image.mode != 'RGB':
         image = image.convert('RGB')
     
-    # Numpy dizisine dönüştür (normalizasyon yapma)
     img_array = np.array(image)
     
-    # İşlenmiş görüntü istatistiklerini kaydet
     logger.info(f"İşlenmiş görüntü istatistikleri: Ortalama={np.mean(img_array)}, StdDev={np.std(img_array)}")
     
-    # Batch boyutu ekle
     img_array = np.expand_dims(img_array, axis=0)
     
     return img_array
 
 def predict_image(file) -> dict:
     try:
-        # Görüntüyü aç
+
         image = Image.open(io.BytesIO(file))
         logger.info(f"Orijinal görüntü boyutu: {image.size}, modu: {image.mode}")
         
-        # Görüntüyü ön işle
         img_array = preprocess_image(image)
         
-        # Tahmin yap
         predictions = model.predict(img_array)[0]
         predicted_index = int(np.argmax(predictions))
         confidence = float(np.max(predictions))
