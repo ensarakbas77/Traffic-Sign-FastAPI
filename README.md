@@ -1,1 +1,1 @@
-# Traffic-Sign-FastAPI
+# Trafik İşareti Sınıflandırıcı - FastAPI
