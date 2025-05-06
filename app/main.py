@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.utils.predict import predict_image
 import logging
 
-# Loglama ayarları
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -13,10 +12,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS ayarları
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Tüm kaynaklara izin ver (geliştirme için)
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,20 +26,19 @@ def read_root():
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
-    # Dosya kontrolü
+
     if not file.content_type.startswith("image/"):
         logger.warning(f"Desteklenmeyen dosya türü: {file.content_type}")
         raise HTTPException(status_code=400, detail="Sadece resim dosyaları yükleyiniz")
     
     try:
-        # Dosyayı oku
+
         contents = await file.read()
         logger.info(f"Resim alındı: {file.filename}, boyut: {len(contents)} bytes")
         
-        # Tahmini yap
         result = predict_image(contents)
         
-        # Hata kontrolü
+
         if "error" in result:
             logger.error(f"Tahmin hatası: {result['error']}")
             raise HTTPException(status_code=500, detail=result["error"])
