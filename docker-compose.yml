@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: traffic-sign-classifier
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./app:/app/app
+    environment:
+      - TZ=Europe/Istanbul
+    restart: unless-stopped
