@@ -16,3 +16,7 @@
 
 ### 4. Tarayıcıdan FastAPI Arayüzüne Erişin </br>
 `http://localhost:7001/docs` </br>
+
+### 5. Tahmin Yapın </br>
+`Örnek test görüntüsü ile tahmin yapın.` </br>
+[Resmi İndir](https://drive.google.com/file/d/1iSTqIAgQSVgk2-ryg0GldfAl5TLALeJE/view?usp=sharing)
