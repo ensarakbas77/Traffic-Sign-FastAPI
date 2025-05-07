@@ -19,5 +19,4 @@
 
 ### 5. Tahmin Yapın </br>
 `Örnek test görüntüsü ile tahmin yapın.` </br>
-[Resmi İndir](https://drive.google.com/file/d/1iSTqIAgQSVgk2-ryg0GldfAl5TLALeJE/view?usp=sharing)
-[burası](https://drive.google.com/uc?export=download&id=1iSTqIAgQSVgk2-ryg0GldfAl5TLALeJE)
+[Resmi İndir](https://drive.google.com/uc?export=download&id=1iSTqIAgQSVgk2-ryg0GldfAl5TLALeJE)
