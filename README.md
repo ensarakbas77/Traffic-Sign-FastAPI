@@ -27,5 +27,5 @@
 **1. Masaüstüne yeni bir klasör oluştur.** </br> 
 **2. Klasöre sağ tıklayıp *“Git Bash Here”* ile terminali aç.** </br> 
 **3. Yukarıdaki **"1. Repoyu Klonlayın"** ve **"2. Uygulamayı Docker ile Başlatın"** adımlarını takip et.** </br> 
-**4. Kurulum başarıyla tamamlandıysa, tarayıcında `http://localhost:7001/docs` adresine giderek Swagger arayüzünü görüntüleyebilirsin.**
-
+**4. Kurulum başarıyla tamamlandıysa, tarayıcında `http://localhost:7001/docs` adresine giderek Swagger arayüzünü görüntüleyebilirsin.** </br> 
+**5. Açılan sayfada `POST /predict` başlığı altındaki *“Try it out”* butonuna tıklayın, yukarıda indirdiğin görseli yükle ve *“Execute”* butonuna bas. Tahmin sonucu JSON formatında ekranda görüntülenecektir.**
